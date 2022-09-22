@@ -1,6 +1,6 @@
 package home_work1;
 
-public class LessonOne {
+public class TaskOne {
     public static void main(String[] args){
 
 // Немного индийского кода с использованием пройденных на уроке типов данных приведённых к char =)

@@ -1,6 +1,6 @@
-package home_work4;
+package home_work2;
 
-public class LessonOne {
+public class TaskOne {
     public static void main(String[] args){
 
 
