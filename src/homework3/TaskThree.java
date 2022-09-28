@@ -76,12 +76,8 @@ public class TaskThree {
             num = (int)temp;
         }
 
-
-        int constant = 50;
         int ask = 0;
-        int attempt = constant;
-
-        int temp = 30;
+        int temp = 50;
         int min = 1;
         int max = 101;
 
