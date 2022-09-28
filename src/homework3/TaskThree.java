@@ -90,7 +90,7 @@ public class TaskThree {
             }
             ask = scan.nextInt();
 
-            if (ask == 1 || temp == num) {
+            if (ask == 1) {
                 System.out.println("Computer guessed, number is " + temp);
                 break;
             } else if (ask == 0) {
