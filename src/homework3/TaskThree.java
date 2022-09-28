@@ -82,12 +82,12 @@ public class TaskThree {
         int attempt = constant;
 
         int temp = 30;
-        int min = 2;
-        int max = 100;
+        int min = 1;
+        int max = 101;
 
         while(true) {
             if (num == temp) {
-                System.out.println("Computer guessed " + temp);
+                System.out.println("Computer guessed, number is " + temp);
                 break;
             } else {
                 System.out.println("Number = " + temp + "?");
@@ -95,7 +95,7 @@ public class TaskThree {
             ask = scan.nextInt();
 
             if (ask == 1 || temp == num) {
-                System.out.println("Computer guesses! " + temp);
+                System.out.println("Computer guessed, number is ! " + temp);
                 break;
             } else if (ask == 0) {
                 System.out.println("Number is bigger?");
