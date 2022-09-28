@@ -36,7 +36,9 @@ public class TaskTwo {
             case 7012:
                 sum *= 0.8;
                 break;
-            case 7647, 9011, 6612: //Случайно открыл для себя, что синтаксис позволяет писать условие через запятую;
+            case 7647:
+            case 9011:
+            case 6612:
                 sum *= 0.9;
                 break;
             default:
@@ -83,12 +85,16 @@ public class TaskTwo {
         int age = 37;
         int exp = 1;
 
-        if (age > 100) {
-            System.out.println("We wil call you much later");
+        if ((age < 18 || age > 110) || (exp < 1 || exp > age - 20)) {
+            System.out.println("Its wrong for job");
         } else if (exp < 5) {
             System.out.println("You can to work as an intern");
         } else if (exp >= 5) {
             System.out.println("You can to work as an developer");
+        } else if (age > 100) {
+            System.out.println("We wil call you later");
+        } else {
+            System.out.println("Err");
         }
 
     }
