@@ -48,6 +48,11 @@ public class Main {
         }  */
 
 
+        String string1 = "string";
+        String string2 = "string";
+        String string3 = new String("String");
+        String s = string3.intern();
+
 
     }
 }

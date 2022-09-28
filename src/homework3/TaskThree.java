@@ -91,22 +91,28 @@ public class TaskThree {
                 break;
             } else if (ask == 0) {
                 System.out.println("Number is bigger?");
+            } else {
+                System.out.println("Wrong!");
+                continue;
             }
 
             if (ask == 0 && num == temp) {
                 System.out.println("Wrong!");
-                break;
+                continue;
             }
 
             ask = scan.nextInt();
 
-            if (ask == 1) {
+            if (ask == 1 && temp < num) {
                 min = temp;
                 temp += (max - min) / 2;
-            } else if (ask == 0) {
+            } else if (ask == 0 && temp > num) {
                 max = temp;
                 temp -= (max - min) / 2;
+            } else {
+                System.out.println("Wrong!");
             }
         }
+
     }
 }
