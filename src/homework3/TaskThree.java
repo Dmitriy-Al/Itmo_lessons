@@ -47,21 +47,22 @@ public class TaskThree {
         // Задача № 3:
 
         double random = Math.random() * 10;
-        int quest = (int)random;
+        int quest = (int) random;
 
-        while(true){
+        while (true) {
             System.out.println("Input number");
             int number = scan.nextInt();
 
-            if(number > 9 || number < 1){
+            if (number > 9 || number < 1) {
                 System.out.println("Number is wrong, try again");
-            } else if (number > quest){
+            } else if (number > quest) {
                 System.out.println("Number is to big, try again");
             } else if (number < quest) {
                 System.out.println("Number is to small, try again");
             } else {
                 System.out.println("You win!");
-                break;}
+                break;
+            }
         }
 
         System.out.println();
@@ -71,9 +72,9 @@ public class TaskThree {
 
         System.out.println("Input number");
         int num = scan.nextInt();
-        if(num < 2 || num > 100){
+        if (num < 2 || num > 100) {
             double temp = Math.random() * 100;
-            num = (int)temp;
+            num = (int) temp;
         }
 
         int ask = 0;
@@ -81,21 +82,22 @@ public class TaskThree {
         int min = 1;
         int max = 101;
 
-        while(true) {
-            if (num == temp) {
-                System.out.println("Computer guessed, number is " + temp);
-                break;
-            } else {
-                System.out.println("Number = " + temp + "?");
-            }
+        while (true) {
+            System.out.println("Number = " + temp + "?");
             ask = scan.nextInt();
 
-            if (ask == 1) {
+            if (ask == 1 && num == temp) {
                 System.out.println("Computer guessed, number is " + temp);
                 break;
             } else if (ask == 0) {
                 System.out.println("Number is bigger?");
             }
+
+            if (ask == 0 && num == temp) {
+                System.out.println("Wrong!");
+                break;
+            }
+
             ask = scan.nextInt();
 
             if (ask == 1) {
@@ -106,7 +108,5 @@ public class TaskThree {
                 temp -= (max - min) / 2;
             }
         }
-
-
     }
 }
