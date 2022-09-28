@@ -64,6 +64,52 @@ public class TaskThree {
                 break;}
         }
 
+        System.out.println();
+
+
+        // Задача № 4:
+
+        System.out.println("Input number");
+        int num = scan.nextInt();
+        if(num < 2 || num > 100){
+            double temp = Math.random() * 100;
+            num = (int)temp;
+        }
+
+
+        int constant = 50;
+        int ask = 0;
+        int attempt = constant;
+
+        int temp = 30;
+        int min = 2;
+        int max = 100;
+
+        while(true) {
+            if (num == temp) {
+                System.out.println("Computer guessed " + temp);
+                break;
+            } else {
+                System.out.println("Number = " + temp + "?");
+            }
+            ask = scan.nextInt();
+
+            if (ask == 1 || temp == num) {
+                System.out.println("Computer guesses! " + temp);
+                break;
+            } else if (ask == 0) {
+                System.out.println("Number is bigger?");
+            }
+            ask = scan.nextInt();
+
+            if (ask == 1) {
+                min = temp;
+                temp += (max - min) / 2;
+            } else if (ask == 0) {
+                max = temp;
+                temp -= (max - min) / 2;
+            }
+        }
 
 
     }
