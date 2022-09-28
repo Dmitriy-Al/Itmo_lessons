@@ -70,47 +70,47 @@ public class TaskThree {
 
         // Задача № 4:
 
-        System.out.println("Input number");
-        int num = scan.nextInt();
-        if (num < 2 || num > 100) {
-            double temp = Math.random() * 100;
-            num = (int) temp;
-        }
-
-        int ask = 0;
+        int num = 0;
         int temp = 50;
         int min = 1;
         int max = 101;
+        int computerAsk = 0;
+        String err = "Wrong! Try again";
+
+        while (num < 2 || num > 100){
+            System.out.println("Input random number from 2 to 100");
+            num = scan.nextInt();
+        }
 
         while (true) {
             System.out.println("Number = " + temp + "?");
-            ask = scan.nextInt();
+            computerAsk = scan.nextInt();
 
-            if (ask == 1 && num == temp) {
+            if (computerAsk == 1 && num == temp) {
                 System.out.println("Computer guessed, number is " + temp);
                 break;
-            } else if (ask == 0) {
+            } else if (computerAsk == 0) {
                 System.out.println("is number bigger?");
             } else {
-                System.out.println("Wrong!");
+                System.out.println(err);
                 continue;
             }
 
-            if (ask == 0 && num == temp) {
-                System.out.println("Wrong!");
+            if (num == temp) {
+                System.out.println(err);
                 continue;
             }
 
-            ask = scan.nextInt();
+            computerAsk = scan.nextInt();
 
-            if (ask == 1 && temp < num) {
+            if (computerAsk == 1 && temp < num) {
                 min = temp;
                 temp += (max - min) / 2;
-            } else if (ask == 0 && temp > num) {
+            } else if (computerAsk == 0 && temp > num) {
                 max = temp;
                 temp -= (max - min) / 2;
             } else {
-                System.out.println("Wrong!");
+                System.out.println(err);
             }
         }
 
