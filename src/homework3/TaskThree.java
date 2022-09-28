@@ -32,11 +32,10 @@ public class TaskThree {
         double liquidSoap = scan.nextInt();
 
         while (plates >= 0 && liquidSoap >= 0) {
+            System.out.println("Rest of the liquidsoap is: " + liquidSoap);
             if (plates == 0 || liquidSoap == 0) {
                 System.out.println("Rest of the liquidsoap is: " + liquidSoap + ", rest of plates = " + plates);
-                break;
             }
-            System.out.println("Rest of the liquidsoap is: " + liquidSoap);
             plates--;
             liquidSoap -= 0.5;
         }
