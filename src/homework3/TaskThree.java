@@ -91,7 +91,7 @@ public class TaskThree {
             ask = scan.nextInt();
 
             if (ask == 1 || temp == num) {
-                System.out.println("Computer guessed, number is ! " + temp);
+                System.out.println("Computer guessed, number is " + temp);
                 break;
             } else if (ask == 0) {
                 System.out.println("Number is bigger?");
