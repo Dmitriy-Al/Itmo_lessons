@@ -90,7 +90,7 @@ public class TaskThree {
                 System.out.println("Computer guessed, number is " + temp);
                 break;
             } else if (ask == 0) {
-                System.out.println("Number is bigger?");
+                System.out.println("is number bigger?");
             } else {
                 System.out.println("Wrong!");
                 continue;

@@ -48,11 +48,21 @@ public class Main {
         }  */
 
 
-        String string1 = "string";
-        String string2 = "string";
+        String string1 = "java";
+        String string2 = "python";
         String string3 = new String("String");
         String s = string3.intern();
 
+        String str = string1 + " :: " + string2;
+        System.out.println(str);
 
+        StringBuilder sb = new StringBuilder();
+
+        for(int i = 0; i < 10; i++){
+            sb.append(i).append(" * ");
+        }
+
+        string1 = sb.toString();
+        System.out.println(string1);
     }
 }
