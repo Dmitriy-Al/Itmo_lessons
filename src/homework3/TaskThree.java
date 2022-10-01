@@ -76,7 +76,7 @@ public class TaskThree {
         int computerAsk = 0;
         String err = "Wrong! Try again";
 
-        while (num < 2 || num > 100){
+        while (num < 2 || num > 100) {
             System.out.println("Input random number from 2 to 100");
             num = scan.nextInt();
         }
@@ -110,6 +110,36 @@ public class TaskThree {
                 temp -= (max - min) / 2;
             } else {
                 System.out.println(err);
+            }
+        }
+
+
+        // Задача № 4:  Минималистичный вариант, алгоритм поиска только операцей деления и по смыслу аналогичен варианту 1;
+
+        System.out.println("Input random number from 2 to 100");
+        int number = scan.nextInt();
+        int mid = 50;
+        int minimal = 2;
+        int maximum = 101;
+        int cpuAsk = 0;
+
+        while (true) {
+            System.out.println("num is " + mid + "?");
+            cpuAsk = scan.nextInt();
+            if (cpuAsk == 1 && number == mid) {
+                System.out.println("cpu wins! ");
+                break;
+            }
+            if (cpuAsk == 0 && number != mid) {
+                System.out.println("is num bigger?");
+            }
+            cpuAsk = scan.nextInt();
+            if (cpuAsk == 1) {
+                minimal = mid;
+                mid = (mid + maximum) / 2;
+            } else {
+                maximum = mid;
+                mid = (mid + minimal) / 2;
             }
         }
 
