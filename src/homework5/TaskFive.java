@@ -16,16 +16,14 @@ public class TaskFive {
 
         int[] arrayOne = new int[10];
 
-        for (int i = 0; i < arrayOne.length; i++) {
+        int min = 100;
+        int max = 0;
+        double sum = 0;
+
+        for (int i = 0; i < 10; i++) {
             arrayOne[i] = (int) (Math.random() * 100);
-        }
 
-        int min = arrayOne[0];
-        int max = min;
-        double sum = min;
-
-        for (int i = 1; i < arrayOne.length; i++) {
-            if (arrayOne[i] < min) {
+            if (min > arrayOne[i]) {
                 min = arrayOne[i];
             } else if (arrayOne[i] > max) {
                 max = arrayOne[i];
@@ -111,16 +109,16 @@ public class TaskFive {
 
         int[] arrayFive = {-5, 4, -3, 2, -1, 1, -2, 3, -4, 5};
 
-        for(int i : arrayFive){
-            if(i < 0){
+        for (int i : arrayFive) {
+            if (i < 0) {
                 counter++;
             }
         }
 
         int[] collector = new int[counter];
 
-        for(int i : arrayFive){
-            if(i < 0){
+        for (int i : arrayFive) {
+            if (i < 0) {
                 collector[counter - 1] = i;
                 counter--;
             }

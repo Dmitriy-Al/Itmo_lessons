@@ -84,26 +84,8 @@ public class Main {
 
  */
 
-        int counterOne = 0;
 
-        int[] arrayFive = {-5, 4, -3, 2, -1, 1, -2, 3, -4, 5};
 
-        for(int i : arrayFive){
-            if(i < 0){
-                counterOne++;
-            }
-        }
-
-        int[] collector = new int[counterOne];
-
-        for(int i : arrayFive){
-            if(i < 0){
-                collector[counterOne - 1] = i;
-                counterOne--;
-            }
-        }
-
-        System.out.println(Arrays.toString(collector));
 
 
     }
