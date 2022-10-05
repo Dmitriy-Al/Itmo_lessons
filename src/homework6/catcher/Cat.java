@@ -58,7 +58,7 @@ public class Cat {
     protected void isCatchMouse(int catsSpeed, int mousesSpeed) {
         if (catsSpeed > mousesSpeed) {
             for (int i = 0; i < caughtMouse.length; i++) {
-                if (caughtMouse[i] == false) {
+                if (!caughtMouse[i]) {
                     caughtMouse[i] = true;
                     return;
                 }
@@ -70,13 +70,13 @@ public class Cat {
 
         if (firstWeight > secondWeight) {
             for (int i = 0; i < caughtMouse.length && i < countMouses + counterMouses; i++) {
-                if (caughtMouse[i] == false) {
+                if (!caughtMouse[i]) {
                     caughtMouse[i] = true;
                 }
             }
         } else {
             for (int i = 0; i < caughtMouse.length; i++) {
-                if (caughtMouse[i] == true) {
+                if (caughtMouse[i]) {
                     caughtMouse[i] = false;
                 }
             }
