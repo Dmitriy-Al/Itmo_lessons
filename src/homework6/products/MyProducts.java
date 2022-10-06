@@ -9,7 +9,7 @@ public class MyProducts extends Product {
     //не может быть добавлен в список (например, слишком большое содержание калорий)
     //Реализовать метод, который выводит названия всех продуктов из списка
 
-    public Product[] dietaryProducts = new Product[10];
+    private final Product[] dietaryProducts = new Product[10];
 
     protected void showAllProductsInfo(Product... product) {
         for (Product p : product)

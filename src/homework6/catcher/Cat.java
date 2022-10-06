@@ -9,7 +9,7 @@ public class Cat {
     private final Mouse[] caughtMouse = new Mouse[100];
     private String name;
     private int speed;
-    int weight;
+    private int weight;
 
     public Cat(String name, int speed, int weight) {
         setAboutCatInfo(name, speed, weight);

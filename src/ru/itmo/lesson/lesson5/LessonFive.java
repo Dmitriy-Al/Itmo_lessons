@@ -1,5 +1,4 @@
-package lessons;
-
+package ru.itmo.lesson.lesson5;
 import java.util.Arrays;
 
 public class LessonFive {

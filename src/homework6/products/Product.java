@@ -12,7 +12,7 @@ public class Product {
     private int protein;
     private int fat;
     private int carbohydrates;
-    protected int calories;
+    private int calories;
 
     public Product() {
     }
@@ -40,23 +40,23 @@ public class Product {
         }
     }
 
-    public String getProductTitle() {
+    protected String getProductTitle() {
         return title;
     }
 
-    public int getProductProtein() {
+    protected int getProductProtein() {
         return protein;
     }
 
-    public int getProductFat() {
+    protected int getProductFat() {
         return fat;
     }
 
-    public int getProductCarb() {
+    protected int getProductCarb() {
         return carbohydrates;
     }
 
-    public int getProductCalories() {
+    protected int getProductCalories() {
         return calories;
     }
 
