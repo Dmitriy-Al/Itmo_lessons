@@ -1,6 +1,6 @@
 package homework6.catcher;
 
-public class Catcher  {
+public class Catcher {
 
     public static void main(String[] args) {
 
@@ -9,43 +9,38 @@ public class Catcher  {
         //то может отобрать его мышей (если скорость мыши выше, чем скорость кота, она убежит).
 
 
-        Mouse mouse1 = new Mouse(4);
+        Mouse mouse1 = new Mouse(4); //Мыши
         Mouse mouse2 = new Mouse(5);
         Mouse mouse3 = new Mouse(6);
         Mouse mouse4 = new Mouse(7);
-        Mouse mouse5 = new Mouse(8);
-
-        Cat grayCat = new Cat("Tom", 7,6);
-
-        Cat gingerCat = new Cat("Barsik", 8, 5);
-
-        grayCat.isCatchMouse(grayCat.getCatsSpeed(), mouse1.getMousesSpeed());
-        grayCat.isCatchMouse(grayCat.getCatsSpeed(), mouse2.getMousesSpeed());
-        grayCat.isCatchMouse(grayCat.getCatsSpeed(), mouse3.getMousesSpeed()); //Том ловит мышей
-        grayCat.isCatchMouse(grayCat.getCatsSpeed(), mouse4.getMousesSpeed());
-        grayCat.isCatchMouse(grayCat.getCatsSpeed(), mouse5.getMousesSpeed());
-
-        gingerCat.isCatchMouse(gingerCat.getCatsSpeed(), mouse1.getMousesSpeed());
-        gingerCat.isCatchMouse(gingerCat.getCatsSpeed(), mouse2.getMousesSpeed());
-        gingerCat.isCatchMouse(gingerCat.getCatsSpeed(), mouse3.getMousesSpeed()); //Барсик ловит мышей
-        gingerCat.isCatchMouse(gingerCat.getCatsSpeed(), mouse4.getMousesSpeed());
-        gingerCat.isCatchMouse(gingerCat.getCatsSpeed(), mouse5.getMousesSpeed());
-
-        System.out.println("\nAmount of mouses: \n");
-
-        grayCat.showCaughtMouse();
-        gingerCat.showCaughtMouse(); //Пойманные мыши
+        Mouse jerry = new Mouse(8);
 
 
-        System.out.println(grayCat.getCountOfMouses());
+        Cat tomCat = new Cat("Tom", 8, 5); //Том
 
-        System.out.println("\nThe first cat attempts to take out mouses from the second cat\n");
+        Cat garfieldCat = new Cat("Garfield", 6, 8); //Гарфилд
 
-        grayCat.isCatSnatchMouse(grayCat.getCatWeight(), grayCat.getCountOfMouses(), gingerCat.getCatWeight(), gingerCat.getCountOfMouses()); //Том пытаеся отнять мышей у Барсика
 
-        System.out.println("\nAmount of mouses: \n");
+        tomCat.isCatchMouse(tomCat, mouse1, mouse2, mouse3, mouse4, jerry); //Том ловит мышей
 
-        grayCat.showCaughtMouse(); //Теперь мышей у Тома
+        garfieldCat.isCatchMouse(garfieldCat, mouse1, mouse2, mouse3, mouse4, jerry); //Гарфилд ловит мышей
+
+        System.out.println("\nAmount of caught mouses:");
+
+        tomCat.showCaughtMouse(); //Пойманные мыши
+        garfieldCat.showCaughtMouse(); //Пойманные мыши
+
+        System.out.println("\nCaught mouses:");
+
+        System.out.println("Garfield caught: " + garfieldCat.getCountOfMouses() + " mouses");
+        System.out.println("Tom caught: " + tomCat.getCountOfMouses() + " mouses");
+
+        garfieldCat.isSnatchMouse(garfieldCat, tomCat); //Кот может напасть на другого кота и, если он больше противника (по весу), то может отобрать его мышей (если скорость мыши выше, чем скорость кота, она убежит).
+
+        System.out.println("\nAfter fought cats have mouses:");
+
+        tomCat.showCaughtMouse(); //Пойманные мыши
+        garfieldCat.showCaughtMouse(); //Пойманные мыши
 
     }
 }

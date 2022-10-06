@@ -12,7 +12,7 @@ public class Product {
     private int protein;
     private int fat;
     private int carbohydrates;
-    private int calories;
+    protected int calories;
 
     public Product() {
     }

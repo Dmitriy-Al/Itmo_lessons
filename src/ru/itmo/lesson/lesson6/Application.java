@@ -5,6 +5,7 @@ package ru.itmo.lesson.lesson6;
 
 import ru.itmo.lesson.lesson6.books.Author;
 import ru.itmo.lesson.lesson6.books.Book;
+import ru.itmo.lesson.lesson6.books.Shelf;
 
 public class Application {
 
@@ -33,6 +34,9 @@ public class Application {
         book1.setPageCount(11);
         System.out.println(book1.toString());
         System.out.println(book1.getAboutBokInfo());
+
+        Shelf shelf = new Shelf(3);
+
 
     }
 }
