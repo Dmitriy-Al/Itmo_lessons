@@ -35,7 +35,7 @@ public class Catcher {
         System.out.println("Garfield caught: " + garfieldCat.getCountOfMouses() + " mouses");
         System.out.println("Tom caught: " + tomCat.getCountOfMouses() + " mouses");
 
-        garfieldCat.isSnatchMouse(garfieldCat, tomCat); //Кот может напасть на другого кота и, если он больше противника (по весу), то может отобрать его мышей (если скорость мыши выше, чем скорость кота, она убежит).
+        garfieldCat.isSnatchMouse(tomCat); //Кот может напасть на другого кота и, если он больше противника (по весу), то может отобрать его мышей (если скорость мыши выше, чем скорость кота, она убежит).
 
         System.out.println("\nAfter fought cats have mouses:");
 

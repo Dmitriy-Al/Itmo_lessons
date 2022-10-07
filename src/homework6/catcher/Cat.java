@@ -50,29 +50,29 @@ public class Cat {
         }
     }
 
-    protected void isSnatchMouse(Cat firstCat, Cat secondCat) {     //Кот может напасть на другого кота и, если он больше противника (по весу),
-        int firstCatAllMouses = firstCat.getCountOfMouses();        // то может отобрать его мышей (если скорость мыши выше, чем скорость кота, она убежит).
+    protected void isSnatchMouse(Cat secondCat) {     //Кот может напасть на другого кота и, если он больше противника (по весу),
+        int firstCatAllMouses = this.getCountOfMouses();        // то может отобрать его мышей (если скорость мыши выше, чем скорость кота, она убежит).
         int secondCatAllMouses = secondCat.getCountOfMouses();
 
-        if (firstCat.weight > secondCat.weight) {
+        if (this.weight > secondCat.weight) {
             for (int i = 0; i < caughtMouse.length && i < firstCatAllMouses + secondCatAllMouses; i++) {
                 if (caughtMouse[i] == null) {
-                    if (secondCat.caughtMouse[i - firstCatAllMouses].getMousesSpeed() < firstCat.getCatsSpeed()) {
-                        firstCat.caughtMouse[i] = secondCat.caughtMouse[i - firstCatAllMouses];
+                    if (secondCat.caughtMouse[i - firstCatAllMouses].getMousesSpeed() < this.getCatsSpeed()) {
+                        this.caughtMouse[i] = secondCat.caughtMouse[i - firstCatAllMouses];
                     }
                     secondCat.caughtMouse[i - firstCatAllMouses] = null;
                 }
             }
-        } else if (firstCat.weight == secondCat.weight) {
+        } else if (this.weight == secondCat.weight) {
             System.out.println("The power of cats is the same, each cant's to win other...");
             return;
         } else {
             for (int i = 0; i < caughtMouse.length && i < firstCatAllMouses + secondCatAllMouses; i++) {
                 if (secondCat.caughtMouse[i] == null) {
-                    if (firstCat.caughtMouse[i - secondCatAllMouses].getMousesSpeed() < secondCat.getCatsSpeed()) {
-                        secondCat.caughtMouse[i] = firstCat.caughtMouse[i - secondCatAllMouses];
+                    if (this.caughtMouse[i - secondCatAllMouses].getMousesSpeed() < secondCat.getCatsSpeed()) {
+                        secondCat.caughtMouse[i] = this.caughtMouse[i - secondCatAllMouses];
                     }
-                    firstCat.caughtMouse[i - secondCatAllMouses] = null;
+                    this.caughtMouse[i - secondCatAllMouses] = null;
                 }
             }
         }
