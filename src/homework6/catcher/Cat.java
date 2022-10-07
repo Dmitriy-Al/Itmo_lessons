@@ -37,9 +37,9 @@ public class Cat {
         }
     }
 
-    protected void isCatchMouse(Cat cat, Mouse... mouse) {   //Кот ловит мышь, только, если его скорость выше, чем у мыши. В качестве аргумента метод принимает вариативное кол-во мышей.
+    protected void isCatchMouse(Mouse... mouse) {   //Кот ловит мышь, только, если его скорость выше, чем у мыши. В качестве аргумента метод принимает вариативное кол-во мышей.
         for (Mouse m : mouse) {
-            if (cat.getCatsSpeed() > m.getMousesSpeed()) {
+            if (this.getCatsSpeed() > m.getMousesSpeed()) {
                 for (int i = 0; i < caughtMouse.length; i++) {
                     if (caughtMouse[i] == null) {
                         caughtMouse[i] = m;
@@ -50,7 +50,7 @@ public class Cat {
         }
     }
 
-    protected void isSnatchMouse(Cat secondCat) {     //Кот может напасть на другого кота и, если он больше противника (по весу),
+    protected void isSnatchMouse(Cat secondCat) {                //Кот может напасть на другого кота и, если он больше противника (по весу),
         int firstCatAllMouses = this.getCountOfMouses();        // то может отобрать его мышей (если скорость мыши выше, чем скорость кота, она убежит).
         int secondCatAllMouses = secondCat.getCountOfMouses();
 

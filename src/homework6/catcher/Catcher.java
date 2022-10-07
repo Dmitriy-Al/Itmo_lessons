@@ -21,9 +21,9 @@ public class Catcher {
         Cat garfieldCat = new Cat("Garfield", 6, 8); //Гарфилд
 
 
-        tomCat.isCatchMouse(tomCat, mouse1, mouse2, mouse3, mouse4, jerry); //Том ловит мышей
+        tomCat.isCatchMouse(mouse1, mouse2, mouse3, mouse4, jerry); //Том ловит мышей
 
-        garfieldCat.isCatchMouse(garfieldCat, mouse1, mouse2, mouse3, mouse4, jerry); //Гарфилд ловит мышей
+        garfieldCat.isCatchMouse(mouse1, mouse2, mouse3, mouse4, jerry); //Гарфилд ловит мышей
 
         System.out.println("\nAmount of caught mouses:");
 

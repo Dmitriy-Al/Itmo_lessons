@@ -10,8 +10,8 @@ public class Mouse {
         setMousesSpeed(speed);
     }
 
-    private void setMousesSpeed(int s) {
-        this.speed = s;
+    private void setMousesSpeed(int speed) {
+        this.speed = speed;
     }
 
     protected int getMousesSpeed() {

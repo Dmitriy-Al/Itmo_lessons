@@ -1,16 +1,16 @@
 package ru.itmo.lesson.lesson7.base;
 
-public class Unit {
+public abstract class Unit {
 
     protected int healthScore;
-    private final int maxHealthScore;
+    private final int maxHealthScore = 100;
 
     public Unit(int healthScore) {
         if (healthScore < 1) {
             throw new IllegalArgumentException("Err, healthScore cants to be less 1");
         }
         this.healthScore = healthScore;
-        maxHealthScore = healthScore;
+        //maxHealthScore = healthScore;
     }
 
     public boolean isAlive() {
