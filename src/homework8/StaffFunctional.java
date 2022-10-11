@@ -2,9 +2,10 @@ package homework8;
 
 public abstract class StaffFunctional {
 
+    protected final String error = "Error! Information of " + this + " is wrong!";
     private String lesson;
-    private String name;
-    private int age;
+    protected String name;
+    protected int age;
     private int knowledge;
     private int teacherSkill;
 

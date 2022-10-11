@@ -11,7 +11,11 @@ public class Mouse {
     }
 
     private void setMousesSpeed(int speed) {
-        this.speed = speed;
+        if (speed > 0) {
+            this.speed = speed;
+        } else {
+            throw new IllegalArgumentException("Err! Speed cant's to be less 0");
+        }
     }
 
     protected int getMousesSpeed() {

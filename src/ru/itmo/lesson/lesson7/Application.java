@@ -9,7 +9,6 @@ public class Application {
 
     public static void main(String[] args){
 
-
         King arthur = new King(100);
         King karl = new King(100);
 
@@ -27,6 +26,8 @@ public class Application {
 
         BattleUnit battleUnit02 = new Infantry(100, 30, 20);// методы ограничены методами BattleUnit((
 
+        battleUnit02.getBattleUnits();
+
         infantry.upAdditionalAttack();
         infantry.attack(knight);
         System.out.println("hp = " + infantry.getHealthScore());
@@ -36,6 +37,8 @@ public class Application {
         System.out.println("hp = " + knight.getHealthScore());
 
         BattleUnit[] bu = {battleUnit01, knight, battleUnit02, infantry};
+
+
 
     }
 }

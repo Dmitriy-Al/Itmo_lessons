@@ -17,7 +17,7 @@ public class Knight extends BattleUnit {
 
     }
 
-    public void upAdditionalHealth(){
+    private void upAdditionalHealth(){
         additionalHealth += (int) (Math.random() * 3);
     }
 

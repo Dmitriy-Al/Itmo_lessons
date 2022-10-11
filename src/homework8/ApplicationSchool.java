@@ -4,7 +4,6 @@ public class ApplicationSchool {
 
     public static void main(String[] args) {
 
-
         Student ron = new Student("Ron Weasley", 14, 40);
         Student harry = new Student("Harry Potter", 14, 50);
         Student hermione = new Student("Hermione Granger", 14, 100);
@@ -14,7 +13,6 @@ public class ApplicationSchool {
         Teacher mcGonagall = new Teacher("Minerva McGonagall", 60, School.LESSON3, 5);
 
         Director dumbledore = new Director("Albus Dumbledore", 114);
-
 
         School school = new School(3, dumbledore, new Teacher[]{umbrige, snape, mcGonagall}, new Student[]{ron, harry, hermione});
 

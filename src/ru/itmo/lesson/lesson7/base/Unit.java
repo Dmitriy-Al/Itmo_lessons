@@ -10,7 +10,6 @@ public abstract class Unit {
             throw new IllegalArgumentException("Err, healthScore cants to be less 1");
         }
         this.healthScore = healthScore;
-        //maxHealthScore = healthScore;
     }
 
     public boolean isAlive() {

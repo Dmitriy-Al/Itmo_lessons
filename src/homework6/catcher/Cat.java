@@ -12,13 +12,33 @@ public class Cat {
     private int weight;
 
     public Cat(String name, int speed, int weight) {
-        setAboutCatInfo(name, speed, weight);
+        setCatName(name);
+        setCatSpeed(speed);
+        setCatWeight(weight);
     }
 
-    private void setAboutCatInfo(String name, int speed, int weight) {
-        this.name = name;
-        this.speed = speed;
-        this.weight = weight;
+    private void setCatName(String name) {
+        if (name.length() >= 1) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Err! Name cant's to be less than 1 symbol");
+        }
+    }
+
+    private void setCatSpeed(int speed) {
+        if (speed > 0) {
+            this.speed = speed;
+        } else {
+            throw new IllegalArgumentException("Err! Speed cant's to be less 0");
+        }
+    }
+
+    private void setCatWeight(int weight) {
+        if (weight > 0) {
+            this.weight = weight;
+        } else {
+            throw new IllegalArgumentException("Err! Weight cant's to be less 0");
+        }
     }
 
     protected int getCatsSpeed() {

@@ -2,9 +2,6 @@ package homework8;
 
 public class Director extends StaffFunctional {
 
-    private String name;
-    private int age;
-
     public Director(String name, int age) {
         super(name, age);
         setName(name);
@@ -12,11 +9,19 @@ public class Director extends StaffFunctional {
     }
 
     private void setName(String name) {
-        this.name = name;
+        if (name.length() < 2){
+            throw new IllegalArgumentException(error);
+        } else {
+            this.name = name;
+        }
     }
 
     private void setAge(int age) {
-        this.age = age;
+        if (age < 33){
+            throw new IllegalArgumentException(error);
+        } else {
+            this.age = age;
+        }
     }
 
     @Override

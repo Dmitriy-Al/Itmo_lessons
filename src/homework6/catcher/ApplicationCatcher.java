@@ -1,6 +1,6 @@
 package homework6.catcher;
 
-public class Catcher {
+public class ApplicationCatcher {
 
     public static void main(String[] args) {
 
@@ -37,7 +37,7 @@ public class Catcher {
 
         garfieldCat.isSnatchMouse(tomCat); //Кот может напасть на другого кота и, если он больше противника (по весу), то может отобрать его мышей (если скорость мыши выше, чем скорость кота, она убежит).
 
-        System.out.println("\nAfter fought cats have mouses:");
+        System.out.println("\nAfter fight cats have mouses:");
 
         tomCat.showCaughtMouse(); //Пойманные мыши
         garfieldCat.showCaughtMouse(); //Пойманные мыши

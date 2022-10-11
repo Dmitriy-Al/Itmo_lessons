@@ -3,8 +3,6 @@ package homework8;
 public class Teacher extends StaffFunctional {
 
     private String lesson;
-    private String name;
-    private int age;
     private int teacherSkill;
 
     public Teacher(String name, int age, String lesson, int teacherSkill) {
@@ -15,21 +13,36 @@ public class Teacher extends StaffFunctional {
         setTeacherSkill(teacherSkill);
     }
 
-
     private void setName(String name) {
-        this.name = name;
+        if (name.length() < 2){
+            throw new IllegalArgumentException(error);
+        } else {
+            this.name = name;
+        }
     }
 
     private void setAge(int age) {
-        this.age = age;
+        if (age < 18){
+            throw new IllegalArgumentException(error);
+        } else {
+            this.age = age;
+        }
     }
 
     private void setLesson(String lesson) {
-        this.lesson = lesson;
+        if (lesson.length() < 3){
+            throw new IllegalArgumentException(error);
+        } else {
+            this.lesson = lesson;
+        }
     }
 
     private void setTeacherSkill(int teacherSkill) {
-        this.teacherSkill = teacherSkill;
+        if (teacherSkill < 1){
+            throw new IllegalArgumentException(error);
+        } else {
+            this.teacherSkill = teacherSkill;
+        }
     }
 
     @Override
