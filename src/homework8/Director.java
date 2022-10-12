@@ -9,7 +9,7 @@ public class Director extends StaffFunctional {
     }
 
     private void setName(String name) {
-        if (name.length() < 2){
+        if (name.length() < 2) {
             throw new IllegalArgumentException(error);
         } else {
             this.name = name;
@@ -17,7 +17,7 @@ public class Director extends StaffFunctional {
     }
 
     private void setAge(int age) {
-        if (age < 33){
+        if (age < 33) {
             throw new IllegalArgumentException(error);
         } else {
             this.age = age;

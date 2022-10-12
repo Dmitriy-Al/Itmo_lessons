@@ -14,7 +14,7 @@ public class Teacher extends StaffFunctional {
     }
 
     private void setName(String name) {
-        if (name.length() < 2){
+        if (name.length() < 2) {
             throw new IllegalArgumentException(error);
         } else {
             this.name = name;
@@ -22,7 +22,7 @@ public class Teacher extends StaffFunctional {
     }
 
     private void setAge(int age) {
-        if (age < 18){
+        if (age < 18) {
             throw new IllegalArgumentException(error);
         } else {
             this.age = age;
@@ -30,7 +30,7 @@ public class Teacher extends StaffFunctional {
     }
 
     private void setLesson(String lesson) {
-        if (lesson.length() < 3){
+        if (lesson.length() < 3) {
             throw new IllegalArgumentException(error);
         } else {
             this.lesson = lesson;
@@ -38,7 +38,7 @@ public class Teacher extends StaffFunctional {
     }
 
     private void setTeacherSkill(int teacherSkill) {
-        if (teacherSkill < 1){
+        if (teacherSkill < 1) {
             throw new IllegalArgumentException(error);
         } else {
             this.teacherSkill = teacherSkill;

@@ -1,6 +1,6 @@
 package homework6.products;
 
-public class ProductsList {
+public class ProductsListApp {
 
     public static void main(String[] args) {
 

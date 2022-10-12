@@ -31,9 +31,13 @@ public class School {
             director.learningStart();
 
             for (Teacher t : teacher) {
-                System.out.println("Teacher " + t.getName() + " teaches students " + t.getLesson());
                 for (Student s : student) {
-                    s.learn(t.teach(t.getTeacherSkill()));
+                    if (t.getLesson().equals(s.lesson1) || t.getLesson().equals(s.lesson2) || t.getLesson().equals(s.lesson3)) {
+                        s.learn(t.teach(t.getTeacherSkill()));
+                        System.out.println("Teacher " + t.getName() + " teaches student " + s.getName() + " " + t.getLesson());
+                    } else {
+                        System.out.println("No lesson");
+                    }
                 }
             }
 
