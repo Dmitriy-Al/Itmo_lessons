@@ -1,4 +1,5 @@
 package lesson15homework;
+
 import java.util.*;
 
 public class MapTask {
@@ -18,7 +19,7 @@ public class MapTask {
 
         String city = "Тверь";
 
-        MapTask.loginToList(firstTaskMap, city);
+        loginToList(firstTaskMap, city);
         System.out.println(MapTask.loginList + "\n");
 
 
@@ -70,11 +71,19 @@ public class MapTask {
                 "uncover many web sites still uncover in their infancy Various versions uncover have evolved over the years uncover sometimes by accident" +
                 " sometimes on purpose injected humour and the like";
 
+
+        System.out.println(getAmountWords(text, "still")); // Вывод результата метода 1
+
+        showGroupWords(text);  // Вывод результата метода 2
+
+        printTopMeetWords(text);
+
+
     }
 
     // Задача 1:
-    static List<String> loginList = new ArrayList<>(); // выбор ArrayList обцсловлен тем, что коллекция в данном конкретном случае пополняется единожды, добавление в середину массива под капотом коллекции не требуется
-
+    static List<String> loginList = new ArrayList<>();     // выбор ArrayList обусловлен тем, что коллекция в данном конкретном случае пополняется единожды,
+                                                                             // добавление в середину массива под капотом коллекции не требуется
     public static void loginToList(Map<String, String> map, String city) {
         for (Map.Entry<String, String> m : map.entrySet()) {
             if (m.getValue().equals(city)) {
@@ -101,7 +110,7 @@ public class MapTask {
     static HashMap<String, Customer> ageSeparatedCustomers = new HashMap<>();
 
     public static void separateAge(int from, int to, Map<String, Customer> map) {
-        if(from != 0 && to != 0) {
+        if (from != 0 && to != 0) {
             for (Map.Entry<String, Customer> m : map.entrySet()) {
                 if (m.getValue().getAge() >= from && m.getValue().getAge() <= to) {
                     ageSeparatedCustomers.put(m.getKey(), m.getValue());
@@ -113,15 +122,61 @@ public class MapTask {
 
     // Задача 4:
 
-
-
-
-    //  Задания по тексту (text). На каждый пункт - минимум один метод (можно статический):
     //  1. написать метод, принимающий на вход слово и возвращающий частоту встречаемости данного слова в тексте
     //  (Map<String, Long>, где - ключи (String) - слово, значения (Long) - частота встречаемости)
+    public static Long getAmountWords(String text, String word) {
+        Map<String, Long> wordsHashMap = new HashMap<>();
+        String[] wordsFromText = text.split(" ");
+
+        for (String s : wordsFromText) {
+            if (wordsHashMap.containsKey(s)) {
+                wordsHashMap.put(s, wordsHashMap.get(s) + 1);
+            } else {
+                wordsHashMap.put(s, 1L);
+            }
+        }
+        System.out.print("The word '" + word + "' meets in the text times: ");
+        return wordsHashMap.get(word);
+    }
+
     //  2. написать метод, который собирает все слова в группы по количеству букв:
     //  например, в одну группу попадут слова: 3 - [the, war, jar, get, met...], в другую 2 - [on, up, no, of...]
     //  (Map<Integer, ArrayList<String>>, где - ключи (Integer) - количество букв, значения (ArrayList<String>) - слова)
+    //TODO:: Плохо понимаю задачу. Если в мапе значение - ArrayList<String>, при этом мапа не принимает
+    // аргументом элементы ArrayList ибо это всё же String, а не сам ArrayList<>. Получается, для каждого
+    // ключа надо создавать свою новую коллекцию ArrayList<>? Или это решается как-то по-другому?
+    // Пока оставлю как есть с value String ...
+
+    public static void showGroupWords(String text) {
+        List<String> setWords = new ArrayList<>();
+        setWords = List.of(text.split(" "));
+        Map<Integer, String> collectWords = new HashMap<>();
+
+        for (String s : setWords) {
+            if (collectWords.containsKey(s.length())) {
+                collectWords.put(s.length(), collectWords.get(s.length()) + ", " + s);
+            } else {
+                collectWords.put(s.length(), " " + s);
+            }
+        }
+        System.out.println("\n" + collectWords);
+    }
+
     //  3. написать метод, который выводит в консоль топ 10 самых часто встречаемых в тексте слов (артикли и предлоги тоже считаем за слова)
+    public static void printTopMeetWords(String text) {
+        String[] wordsFromText = text.split(" ");
+        Map<String, Integer> collectWords = new LinkedHashMap<>();
+
+        for(String s : wordsFromText){
+            if(collectWords.containsKey(s)) {
+                collectWords.replace(s, collectWords.get(s) + 1);
+            } else {
+                collectWords.put(s, 1);
+            }
+        }
+        System.out.println(collectWords);
+// в процессе доработки
+    }
+
 
 }
