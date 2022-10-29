@@ -18,6 +18,9 @@ public class LambdaLesson {
         Operation plus = (first, second) -> /*return по умолчанию т.к. нет {} */ first + second;
         System.out.println(plus.execute(1, 5));
 
+        Operation plus03 = Double::sum; // ПОСМОТРЕТЬ КАК ЭТО РАБОТАЕТ
+        System.out.println(plus03.execute(3, 7) + " ссылка на метод");
+
         Operation div = (a, b) -> {
             if(b == 0 ) return 0;
             return a / b;

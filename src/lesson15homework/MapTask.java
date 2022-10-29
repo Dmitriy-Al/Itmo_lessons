@@ -1,5 +1,7 @@
 package lesson15homework;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 
 public class MapTask {
@@ -76,8 +78,7 @@ public class MapTask {
 
         showGroupWords(text);  // Вывод результата метода 2
 
-        printTopMeetWords(text);
-
+        printTopMeetWords(text); // Вывод результата метода 3
 
     }
 
@@ -143,8 +144,8 @@ public class MapTask {
     //  например, в одну группу попадут слова: 3 - [the, war, jar, get, met...], в другую 2 - [on, up, no, of...]
     //  (Map<Integer, ArrayList<String>>, где - ключи (Integer) - количество букв, значения (ArrayList<String>) - слова)
     //TODO:: Плохо понимаю задачу. Если в мапе значение - ArrayList<String>, при этом мапа не принимает
-    // аргументом элементы ArrayList ибо это всё же String, а не сам ArrayList<>. Получается, для каждого
-    // ключа надо создавать свою новую коллекцию ArrayList<>? Или это решается как-то по-другому?
+    // аргументом элементы ArrayList т.к. это всё же String, а не сам ArrayList<>. Получается, для каждого
+    // ключа надо создавать новую коллекцию ArrayList<>? Или это решается как-то по-другому?
     // Пока оставлю как есть с value String ...
 
     public static void showGroupWords(String text) {
@@ -159,13 +160,17 @@ public class MapTask {
                 collectWords.put(s.length(), " " + s);
             }
         }
-        System.out.println("\n" + collectWords);
+        System.out.println("\n" + collectWords + "\n");
     }
 
     //  3. написать метод, который выводит в консоль топ 10 самых часто встречаемых в тексте слов (артикли и предлоги тоже считаем за слова)
+    //  Наверно это индийский код=) Подсмотрел более изящное решение с LinkedHashMap, но пушить чужое решение не хочется,
+    //  пусть будет моё
     public static void printTopMeetWords(String text) {
         String[] wordsFromText = text.split(" ");
-        Map<String, Integer> collectWords = new LinkedHashMap<>();
+        Map<String, Integer> collectWords = new HashMap<>();
+        int iterationCounter = 0;
+        int maxWords = 0;
 
         for(String s : wordsFromText){
             if(collectWords.containsKey(s)) {
@@ -174,9 +179,23 @@ public class MapTask {
                 collectWords.put(s, 1);
             }
         }
-        System.out.println(collectWords);
-// в процессе доработки
-    }
 
+        for(Map.Entry<String, Integer> m : collectWords.entrySet()){
+            if(m.getValue() > maxWords){
+                maxWords = m.getValue();
+            }
+        }
+
+        while(true){
+            for(Map.Entry<String, Integer> m : collectWords.entrySet()){
+                if(iterationCounter == 10) return;
+                if(m.getValue() == maxWords) {
+                    iterationCounter++;
+                    System.out.println("Result " + iterationCounter + ": " + m);
+                }
+            }
+            maxWords--;
+        }
+    }
 
 }
