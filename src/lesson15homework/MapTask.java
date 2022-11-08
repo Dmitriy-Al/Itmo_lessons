@@ -1,6 +1,6 @@
 package lesson15homework;
 
-import org.w3c.dom.ls.LSOutput;
+
 
 import java.util.*;
 
@@ -84,7 +84,8 @@ public class MapTask {
 
     // Задача 1:
     static List<String> loginList = new ArrayList<>();     // выбор ArrayList обусловлен тем, что коллекция в данном конкретном случае пополняется единожды,
-                                                                             // добавление в середину массива под капотом коллекции не требуется
+
+    // добавление в середину массива под капотом коллекции не требуется
     public static void loginToList(Map<String, String> map, String city) {
         for (Map.Entry<String, String> m : map.entrySet()) {
             if (m.getValue().equals(city)) {
@@ -172,24 +173,24 @@ public class MapTask {
         int iterationCounter = 0;
         int maxWords = 0;
 
-        for(String s : wordsFromText){
-            if(collectWords.containsKey(s)) {
+        for (String s : wordsFromText) {
+            if (collectWords.containsKey(s)) {
                 collectWords.replace(s, collectWords.get(s) + 1);
             } else {
                 collectWords.put(s, 1);
             }
         }
 
-        for(Map.Entry<String, Integer> m : collectWords.entrySet()){
-            if(m.getValue() > maxWords){
+        for (Map.Entry<String, Integer> m : collectWords.entrySet()) {
+            if (m.getValue() > maxWords) {
                 maxWords = m.getValue();
             }
         }
 
-        while(true){
-            for(Map.Entry<String, Integer> m : collectWords.entrySet()){
-                if(iterationCounter == 10) return;
-                if(m.getValue() == maxWords) {
+        while (true) {
+            for (Map.Entry<String, Integer> m : collectWords.entrySet()) {
+                if (iterationCounter == 10) return;
+                if (m.getValue() == maxWords) {
                     iterationCounter++;
                     System.out.println("Result " + iterationCounter + ": " + m);
                 }
