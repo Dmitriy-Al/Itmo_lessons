@@ -1,9 +1,6 @@
 package ru.itmo.lesson.lesson12;
 
-import ru.itmo.lesson.lesson7.units.Infantry;
-
 import java.io.IOException;
-import java.util.Locale;
 
 public class ExceptionLesson {
 

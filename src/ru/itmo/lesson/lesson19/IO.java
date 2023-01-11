@@ -4,23 +4,24 @@ import java.io.*;
 import java.util.Scanner;
 
 public class IO {
+
+   // File file = new File("C:/Users/admit/OneDrive/Рабочий стол/IOfile.txt");
     private static boolean writeToFile(byte[] bytes, File file)
-        /* throws FileNotFoundException */
-    {
+        /* throws FileNotFoundException */ {
         boolean result = false;
         // try with resources java 7
-        // в () можно создать экземпляры любого типа, если данный
+        // в () можно создать экземпляры любого типа, если данный класс
         // имплементирует интерфейс AutoCloseable и реализует
         // его абстрактный метод close
         // если объект создан в (), метод close вызывается автоматически:
-        // 1. если все инструкции try выполнены без ошибок
-        // 2. если в блоке try произошла ошибка (метод вызывается сразу после
+        // если все инструкции try выполнены без ошибок
+        // если в блоке try произошла ошибка (метод вызывается сразу после
         // исключительной ситуации)
-        try(FileOutputStream output = new FileOutputStream(file, true)) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(file, true)) {
             // new FileOutputStream(file) - перезапись данных
             // new FileOutputStream(file, true) - дозапись данных
             // если файла не существует, он будет создан
-            output.write(bytes);
+            fileOutputStream.write(bytes);
             result = true;
         } catch (FileNotFoundException e) {
             System.out.println("Не удалось использовать файл");
@@ -33,10 +34,9 @@ public class IO {
     }
 
     public static byte[] readFromFile(File file)
-        /* throws IOException */
-    {
+        /* throws IOException */ {
         byte[] result = null;
-        try (FileInputStream fileInput = new FileInputStream(file)){
+        try (FileInputStream fileInput = new FileInputStream(file)) {
             // если файл не найден, будет сгенерировано исключение
             result = fileInput.readAllBytes();
         } catch (FileNotFoundException e) {
@@ -50,7 +50,7 @@ public class IO {
         return result;
     }
 
-    public static boolean writeFromConsole(File file){
+    public static boolean writeFromConsole(File file) {
         boolean result = false;
         try (FileOutputStream fileOutput = new FileOutputStream(file, true);
              // классы - декораторы
@@ -59,7 +59,7 @@ public class IO {
             // new BufferedOutputStream(fileOutput, 512) 512
 
             Scanner scanner = new Scanner(System.in);
-            while (true){
+            while (true) {
                 System.out.println("Введите данные или stop для выхода");
                 String userInput = scanner.nextLine();
                 if ("stop".equalsIgnoreCase(userInput)) break;
@@ -75,6 +75,8 @@ public class IO {
 
 
     public static void main(String[] args) {
+
+
 
     }
 }
